@@ -1,0 +1,55 @@
+.material-symbols-outlined {
+  font-family: 'Material Icons'; /* Set font family to Material Icons */
+  font-weight: normal; /* Set font weight to normal */
+  font-style: normal; /* Set font style to normal */
+  font-size: 24px; /* Set font size */
+  line-height: 1; /* Adjust line height if needed */
+  text-transform: none; /* Set text transform to none */
+  display: inline-block; /* Set display to inline-block */
+  white-space: nowrap; /* Prevent line breaks */
+  word-wrap: normal; /* Prevent word wrap */
+  direction: ltr; /* Set text direction to left-to-right */
+  -webkit-font-smoothing: antialiased; /* Improve font rendering on WebKit browsers */
+  text-rendering: optimizeLegibility; /* Improve text rendering */
+}
+
+.sidebar {
+  width: 60px;
+  background-color: #f0f0f0;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sidebar.expanded {
+  width: 200px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar-item .material-symbols-outlined {
+  margin-right: 10px;
+}
+
+.sidebar-label {
+  display: none;
+}
+
+.sidebar.expanded .sidebar-label {
+  display: inline;
+}
+
+.sidebar-submenu {
+  list-style-type: none;
+  padding-left: 30px;
+  display: none;
+}
+
+.sidebar.expanded .sidebar-submenu {
+  display: block;
+}

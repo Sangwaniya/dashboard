@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
 import './SellersList.css';
 
-const SellersList: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const [onboardingStatus, setOnboardingStatus] = useState<string>('');
-  const [accountStatus, setAccountStatus] = useState<string>('');
+const SellersList = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [onboardingStatus, setOnboardingStatus] = useState('');
+  const [accountStatus, setAccountStatus] = useState('');
 
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleOnboardingStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleOnboardingStatusChange = (event) => {
     setOnboardingStatus(event.target.value);
   };
 
-  const handleAccountStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleAccountStatusChange = (event) => {
     setAccountStatus(event.target.value);
   };
 
   return (
-    <div className="sellers-list">
-      <header className="sellers-list-header">
-        <h1>Sellers List</h1>
+    <div className="sellers-list-container">
+      <div className="sellers-list-header">
         <div className="filters">
           <input
             type="text"
@@ -41,7 +40,7 @@ const SellersList: React.FC = () => {
             <option value="suspended">Suspended</option>
           </select>
         </div>
-      </header>
+      </div>
       <div className="sellers-list-content">
         <div className="seller-card">
           <div className="seller-info">
