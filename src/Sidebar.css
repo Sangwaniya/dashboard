@@ -14,11 +14,16 @@
 }
 
 .sidebar {
-  width: 60px;
-  background-color: #f0f0f0;
-  transition: width 0.3s ease-in-out;
-  overflow: hidden;
-  white-space: nowrap;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #6a1b9a;
+  color: white;
+  padding: 1rem;
+  transition: width 0.3s ease;
+  width: 56px;
+  z-index: 100; /* Ensure the sidebar is on top of other elements */
 }
 
 .sidebar.expanded {
@@ -28,28 +33,53 @@
 .sidebar-item {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 0.5rem;
   cursor: pointer;
 }
 
-.sidebar-item .material-symbols-outlined {
-  margin-right: 10px;
-}
-
 .sidebar-label {
-  display: none;
+  margin-left: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .sidebar.expanded .sidebar-label {
-  display: inline;
+  opacity: 1;
+}
+
+.sidebar-arrow {
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.expanded .sidebar-arrow {
+  opacity: 1;
 }
 
 .sidebar-submenu {
   list-style-type: none;
-  padding-left: 30px;
-  display: none;
+  padding-left: 2rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
-.sidebar.expanded .sidebar-submenu {
-  display: block;
+.sidebar-submenu.open {
+  opacity: 1;
+  max-height: 200px;
+}
+
+.search-box {
+  margin-bottom: 1rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #4a148c;
+  color: white;
+  border: none;
+  outline: none;
 }

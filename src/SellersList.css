@@ -1,6 +1,6 @@
 .sellers-list-container {
   flex-grow: 1;
-  margin-left: 60px; /* Adjust this value to match the sidebar width */
+  margin-left: 80px; /* Adjust this value to match the sidebar width */
   /* background-color: #1e1e1e; */
   color: #fff;
   font-family: Arial, sans-serif;
