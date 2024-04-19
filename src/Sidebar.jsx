@@ -34,26 +34,28 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebar ${isExpanded ? 'expanded' : ''}`} onMouseEnter={toggleSidebar} onMouseLeave={toggleSidebar}>
+    <div className={`sidebar ${isExpanded ? 'expanded' : ''}`} role="navigation" tabIndex="0" onMouseEnter={toggleSidebar} onMouseLeave={toggleSidebar}>
       <div className="search-box">
-        <input type="text" placeholder="Search seller or press enter" />
+        <input type="text" placeholder="Search  items" />
       </div>
-      <div className="sidebar-item" onClick={toggleSellers}>
-        <span className="material-symbols-outlined">storefront</span>
-        <span className="sidebar-label">Sellers</span>
-        {isSellersOpen ? (
-          <span className="material-symbols-outlined sidebar-arrow">expand_less</span>
-        ) : (
-          <span className="material-symbols-outlined sidebar-arrow">expand_more</span>
-        )}
+      <div className="sidebar-item">
+        <div className="sidebar-item-header" onClick={toggleSellers}>
+          <span className="material-symbols-outlined">storefront</span>
+          <span className="sidebar-label">Seller</span>
+          {isSellersOpen ? (
+            <span className="material-symbols-outlined sidebar-arrow">expand_less</span>
+          ) : (
+            <span className="material-symbols-outlined sidebar-arrow">expand_more</span>
+          )}
+        </div>
         {isSellersOpen && (
-          <ul className="sidebar-submenu">
-            <li>Pre Onboarding Sellers</li>
-            <li>Sellers List</li>
-            <li>Create New Seller</li>
-            <li>Survey Response</li>
-            <li>Rate Card Templates</li>
-          </ul>
+          <>
+            <div className="sidebar-submenu-item">Pre Onboarding Sellers</div>
+            <div className="sidebar-submenu-item">Sellers List</div>
+            <div className="sidebar-submenu-item">Create New Seller</div>
+            <div className="sidebar-submenu-item">Survey Response</div>
+            <div className="sidebar-submenu-item">Rate Card Templates</div>
+          </>
         )}
       </div>
       <div className="sidebar-item" onClick={toggleChecklist}>
@@ -63,6 +65,15 @@ const Sidebar = () => {
           <span className="material-symbols-outlined sidebar-arrow">expand_less</span>
         ) : (
           <span className="material-symbols-outlined sidebar-arrow">expand_more</span>
+        )}
+        {isChecklistOpen && isExpanded && (
+          <ul >
+            <li>Pre Onboarding Sellers</li>
+            <li>Sellers List</li>
+            <li>Create New Seller</li>
+            <li>Survey Response</li>
+            <li>Rate Card Templates</li>
+          </ul>
         )}
       </div>
       <div className="sidebar-item" onClick={toggleAnalytics}>
