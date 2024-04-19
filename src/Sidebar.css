@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   padding: 0.5rem;
-  /* margin-bottom: 0.5rem; */
+  margin-bottom: 0.4rem;
   cursor: pointer;
 }
 
@@ -48,35 +48,6 @@
 
 .sidebar.expanded .sidebar-label {
   opacity: 1;
-}
-
-.sidebar-arrow {
-  margin-left: auto;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-} 
-
-.sidebar.expanded .sidebar-arrow {
-  opacity: 1;
-}
-
-.sidebar-submenu {
-  list-style-type: none;
-  padding: 0;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  text-align: center; /* Center the submenu items */
-}
-
-.sidebar-submenu li {
-  padding: 0.5rem 0; /* Add some spacing between submenu items */
-}
-
-.sidebar-submenu.open {
-  opacity: 1;
-  max-height: 200px; /* Adjust this value as needed */
 }
 
 .search-box {
@@ -92,3 +63,6 @@
   border: none;
   outline: none;
 }
+
+
+
