@@ -20,6 +20,8 @@
   bottom: 0;
   background-color: #6a1b9a;
   color: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   padding: 1rem;
   transition: width 0.3s ease;
   width: 56px;
@@ -34,6 +36,7 @@
   display: flex;
   align-items: center;
   padding: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   cursor: pointer;
 }
 
@@ -51,7 +54,7 @@
   margin-left: auto;
   opacity: 0;
   transition: opacity 0.3s ease;
-}
+} 
 
 .sidebar.expanded .sidebar-arrow {
   opacity: 1;
@@ -59,20 +62,26 @@
 
 .sidebar-submenu {
   list-style-type: none;
-  padding-left: 2rem;
+  padding: 0;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease;
+  text-align: center; /* Center the submenu items */
+}
+
+.sidebar-submenu li {
+  padding: 0.5rem 0; /* Add some spacing between submenu items */
 }
 
 .sidebar-submenu.open {
   opacity: 1;
-  max-height: 200px;
+  max-height: 200px; /* Adjust this value as needed */
 }
 
 .search-box {
   margin-bottom: 1rem;
+  width: 90%;
 }
 
 .search-box input {
